@@ -76,16 +76,14 @@ while True:
     else:
         ans, que = random.choice(list(main.items()))
         inp = input("Number %s(%s%s%s%s)%s: " % (CYELLOW, BOLD, que, RESET, CYELLOW, RESET))
-
-    if inp == "": 
-        while inp == "":
-            print("Please enter a non empty answer")
-            inp = ""
-    elif inp == ans:
+ 
+    while inp == "":
+        inp = input("Please enter a non empty answer: ")
+    if inp == ans:
         counter += 1
         print("%sCorrect! (%s%d so far%s%s) %s" % (CGREEN, BOLD, counter, RESET, CGREEN, RESET))
     else:
-        print("%sWrong! The answer was %s%s%s%s %s" % (CRED, BOLD, ans, RESET, CRED, RESET))
+        print("%sWrong! The answer was %s%s%s%s%s%s, your score was %s%s%s%s.%s" % (CRED, BOLD, ans, RESET, CRED, RESET, CRED, BOLD, counter, RESET, CRED, RESET))
         counter = 0
 
     input("")
